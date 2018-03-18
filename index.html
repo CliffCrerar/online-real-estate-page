@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Infinity Arc</title>
-
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
     <script src="./node_modules/jquery/dist/jquery.js"></script>
@@ -189,6 +189,8 @@
             position: absolute;
             margin: 1vh 0 0 0;
             height: 100%;
+            left: 50%;
+            transform: translateX(-50%)
         }
         
         .slistHeading {
@@ -197,15 +199,183 @@
         
         .card {
             display: none;
-            width: 50%;
+            height: 70%;
+            margin: auto;
+        }
+        
+        .card-body {
+            height: 75%;
+            overflow: scroll;
+        }
+        
+        .iaBottomLogo {
+            width: 100%;
+            height: 15%;
+            display: none;
+        }
+        
+        .iaBottomImg {
+            position: relative;
             height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .modal {
+            z-index: 5000;
         }
     </style>
-    <div class="serviceList container-fluid">
-        <h2 class="slistHeading">What you get for R199 per month</h2>
-        <div id="service" class="card"></div>
+    <div class="serviceList container">
+        <h2 class="slistHeading text-center">What you get for R199 per month</h2>
+        <div id="service" class="card text-white bg-secondary">
+            <div class="card-header text-center">
+                <div class="ourservice">Our Service</div>
+            </div>
+            <div class="card-body">
+
+                <h5 class="card-title"><span class="fa fa-rocket"></span> Once off service</h5>
+
+                <h6>Domain name</h6>
+
+                <ul>
+                    <li>Your own domain name. www.yourdomain.whatisavailable</li>
+                </ul>
+
+                <h6>Website with domain address</h6>
+
+                <ul>
+                    <li>A modern and professional website to establish a online presence</li>
+                    <li>Will be taylored for you</li>
+                    <li>Descibes your products or services</li>
+                    <li>Your vision and mission</li>
+                    <li>Photo gallery or portfolio, can include photos and videos</li>
+                    <li>Show the location of organisation</li>
+                    <li>A service where people can contact you directly from your website</li>
+                    <li>Mobile responsive, which means your site can be viewed on any device</li>
+                    <li>Will be connected to your social media</li>
+                    <li>Will present up to 5 prototypes to ensure satisfaction</li>
+                    <li>We will publish and host your website</li>
+                </ul>
+
+                <h6>Logo design</h6>
+
+                <ul>
+                    <li>We will design a logo that will make you visually recognisable anywhere</li>
+                </ul>
+
+                <h6>Domain email</h6>
+
+                <ul>
+                    <li>Domain email service for 20 users, yourname@yourdomain.whateverisavailable</li>
+                    <li>Includes implementation of email applications for users</li>
+                </ul>
+
+                <h6>Offline profile</h6>
+
+                <ul>
+                    <li>Offline business profile (pdf) for you to distribute as you please</li>
+                </ul>
+
+                <h5 class="card-title"><span class="fa fa-thumbs-up"></span> Ongoing services</h5>
+
+                <h6>Website analytics</h6>
+
+                <ul>
+                    <li>We will provide you with information on how your site is preforming</li>
+                    <li>The type of info we can produce is almost limitless</li>
+                    <li>We can provide you will weekly reports customised for you</li>
+                    <li>Or you can have your own on demand access</li>
+                    <li>On demand access users have the option to create and customise their own analytics dashboard</li>
+                </ul>
+
+                <h6>Website maintenace</h6>
+
+                <ul>
+                    <li>Our fee includes 3 hours of on demand monthly content updates</li>
+                </ul>
+
+                <h6>Bakcups</h6>
+
+                <ul>
+                    <li>We will make and manage backups of your website and email, safely and securerely in the cloud</li>
+                </ul>
+
+                <h6>Support</h6>
+                <ul>
+                    <li>We will provide ongoing support on all once off services</li>
+                </ul>
+
+                <h6>No hidden fees</h6>
+                <ul>
+                    <li>There are no other once off or hidden, fees</li>
+                    <li>As soon as you have paid the first installment, we consider you are our client</li>
+                    <li>Some T's and C's do apply and are set out in our service level agreement</li>
+                </ul>
+            </div>
+            <div class="card-footer text-muted clearfix">
+                <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+            </div>
+        </div>
+        <div class="iaBottomLogo">
+            <img class="iaBottomImg" src="./iav.png">
+        </div>
     </div>
+
     <!-- /SERVICE LIST -->
+
+    <!--MODAL WINDOW-->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <form class="form-inline">
+                            <!--TO-->
+                            <label class="sr-only" for="mailto">send to</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="fa fa-paper-plane"></span></div>
+                                </div>
+                                <input type="text" class="form-control" id="mailto" disabled value="info@infinityarc.net">
+                            </div>
+                            <!--NAME-->
+                            <label class="sr-only" for="reqQteName">Name</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="fa fa-user"></span></div>
+                                </div>
+                                <input type="text" class="form-control" id="reqQteName" placeholder="Name">
+                            </div>
+                            <!--ADDRESS-->
+                            <label class="sr-only" for="reqQteEmail">e-mail address</label>
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><span class="fa fa-at"></span></div>
+                                </div>
+                                <input type="text" class="form-control" id="reqQteEmail" placeholder="email address">
+                            </div>
+
+                        </form>
+                        <!--CARD INDICATES PART ENQUIRY-->
+                        <div class="card">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <!--TEXT AREA FOR MESSAGE-->
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/MODAL WINDOW-->
     <script>
         // ADJUST WHEN STARTING
         $('body').css('height', window.innerHeight);
@@ -236,20 +406,8 @@
                 $('.pushPlay').fadeOut(() => {
                     $('.slistHeading').fadeIn(() => {
                         $('#service').fadeIn(() => {
-                            console.log(list);
-                            for (var h in list) {
-                                console.log(h)
-                                console.log(list[h])
-                                console.log(typeof list[h])
-                                var subList = list[h]
-                                for (var sh in subList) {
-                                    console.log(sh);
-                                    console.log(subList[sh])
-                                    console.log(typeof subList[sh])
-                                }
-                            }
+                            $('.iaBottomLogo').fadeIn();
                         });
-
                     });
                 })
             });
