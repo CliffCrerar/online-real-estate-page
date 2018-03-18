@@ -73,6 +73,18 @@
                 touch-action: none;
             }
         }
+        
+        @media screen and (max-width:320px) {
+            .text {
+                top: 0%;
+            }
+        }
+        
+        @media screen and (max-width:375px) {
+            .text {
+                top: 5%;
+            }
+        }
     </style>
     <div class="text container-fluid">
         <h1>FOR SALE</h1>
@@ -135,6 +147,15 @@
             }
             .iaimg {
                 width: 120%
+            }
+        }
+        
+        @media screen and (max-width:320px) {
+            .bgGif {
+                top: 60%;
+            }
+            .ia {
+                top: 60%;
             }
         }
     </style>
@@ -391,13 +412,6 @@
             $('body').css('height', window.innerHeight);
         }
 
-        // PLAY LSIT OF SERVICES
-        let serviceList;
-        $.get('./serviceList.json', (list) => {
-            serviceList = list;
-            console.log(serviceList);
-        });
-
         // CLICK THE INFO ANCHOR BUTTON
         $('.infoButton').on('click', () => {
             $('body').children().fadeOut();
@@ -408,7 +422,7 @@
 
         const pushPlay = (list) => {
             $('.playButton').on('click', () => {
-                console.log('pressed play');
+                //console.log('pressed play');
                 $('.serviceList').css('display', 'block')
                 $('.pushPlay').fadeOut(() => {
                     $('.slistHeading').fadeIn(() => {
