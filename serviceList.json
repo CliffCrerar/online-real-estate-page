@@ -1,0 +1,41 @@
+{
+    "Once off service": {
+        "Domain name": "Your own domain name. www.yourdomain.whatisavailable",
+        "Website with domain address": [
+            "A modern and professional website to establish a online presence",
+            "Will be taylored for you",
+            "Descibes your products or services",
+            "Your vision and mission",
+            "Photo gallery or portfolio, can include photos and videos",
+            "Show the location of organisation",
+            "A service where people can contact you directly from your website",
+            "Mobile responsive, which means your site can be viewed on any device",
+            "Will be connected to your social media",
+            "Will present up to 5 prototypes to ensure satisfaction",
+            "We will publish and host your website"
+        ],
+        "Logo design": "We will design a logo that will make you visually recognisable anywhere",
+        "Domain email": [
+            "Domain email service for 20 users, yourname@yourdomain.whateverisavailable",
+            "Includes implementation of email applications for users"
+        ],
+        "Offline profile": "Offline business profile (pdf) for you to distribute as you please"
+    },
+    "Ongoing services": {
+        "Website analytics": [
+            "We will provide you with information on how your site is preforming",
+            "The type of info we can produce is almost limitless",
+            "We can provide you will weekly reports customised for you",
+            "Or you can have your own on demand access",
+            "On demand access users have the option to create and customise their own analytics dashboard"
+        ],
+        "Website maintenace": "Our fee includes 3 hours of on demand monthly content updates",
+        "Backups": "We will make and manage backups of your website and email, safely and securerely in the cloud",
+        "Support": "We will provide ongoing support on all once off services"
+    },
+    "No hidden fees": [
+        "There are no other once off or hidden, fees",
+        "As soon as you have paid the first installment, we consider you are our client",
+        "Some T's and C's do apply and are set out in our service level agreement"
+    ]
+}

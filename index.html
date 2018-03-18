@@ -146,13 +146,14 @@
     </div>
     <!-- /PAGE MAIN GRAPHIC -->
 
-    <!-- SERVICE LIST -->
+    <!-- PLAY SCREEN -->
     <style>
         .pushPlay {
             position: relative;
             display: none;
             top: 50%;
-            transform: translateY(-50%)
+            transform: translateY(-50%);
+            z-index: 600;
         }
         
         .fa-play {
@@ -177,10 +178,33 @@
         }
     </style>
     <div class="pushPlay text-center">
-        <a class="fa fa-play"></a>
+        <a class="fa fa-play playButton"></a>
         <h4>PUSH PLAY</h4>
     </div>
+    <!-- /PLAY SCREEN -->
 
+    <!-- SERVICE LIST -->
+    <style>
+        .serviceList {
+            position: absolute;
+            margin: 1vh 0 0 0;
+            height: 100%;
+        }
+        
+        .slistHeading {
+            display: none;
+        }
+        
+        .card {
+            display: none;
+            width: 50%;
+            height: 100%;
+        }
+    </style>
+    <div class="serviceList container-fluid">
+        <h2 class="slistHeading">What you get for R199 per month</h2>
+        <div id="service" class="card"></div>
+    </div>
     <!-- /SERVICE LIST -->
     <script>
         // ADJUST WHEN STARTING
@@ -190,16 +214,46 @@
             $('.infoButton').appendTo('.moreInfo');
         }
 
+        // PLAY LSIT OF SERVICES
+        let serviceList;
+        $.get('./serviceList.json', (list) => {
+            serviceList = list;
+            console.log(serviceList);
+        });
+
         // CLICK THE INFO ANCHOR BUTTON
         $('.infoButton').on('click', () => {
             $('body').children().fadeOut();
-            $('.pushPlay').fadeIn();
+            $('.pushPlay').fadeIn('400', () => {
+                pushPlay(serviceList);
+            })
         });
 
-        // PLAY LSIT OF SERVICES
-        $('.fa-play').on('click', () => {
-            $('.pushPlay').slideDown();
-        });
+        const pushPlay = (list) => {
+            $('.playButton').on('click', () => {
+                console.log('pressed play');
+                $('.serviceList').css('display', 'block')
+                $('.pushPlay').fadeOut(() => {
+                    $('.slistHeading').fadeIn(() => {
+                        $('#service').fadeIn(() => {
+                            console.log(list);
+                            for (var h in list) {
+                                console.log(h)
+                                console.log(list[h])
+                                console.log(typeof list[h])
+                                var subList = list[h]
+                                for (var sh in subList) {
+                                    console.log(sh);
+                                    console.log(subList[sh])
+                                    console.log(typeof subList[sh])
+                                }
+                            }
+                        });
+
+                    });
+                })
+            });
+        }
     </script>
 </body>
 
