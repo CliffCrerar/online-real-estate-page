@@ -416,11 +416,11 @@
         $('.infoButton').on('click', () => {
             $('body').children().fadeOut();
             $('.pushPlay').fadeIn('400', () => {
-                pushPlay(serviceList);
+                pushPlay();
             })
         });
 
-        const pushPlay = (list) => {
+        const pushPlay = () => {
             $('.playButton').on('click', () => {
                 //console.log('pressed play');
                 $('.serviceList').css('display', 'block')
