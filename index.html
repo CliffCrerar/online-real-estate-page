@@ -8,6 +8,7 @@
     <title>Infinity Arc</title>
 
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <style>
@@ -17,7 +18,12 @@
             height: 100%;
             width: 100%;
         }
-        
+    </style>
+</head>
+
+<body>
+    <!-- MAIN PAGE INFO -->
+    <style>
         h1,
         h2,
         h3 {
@@ -36,24 +42,63 @@
             font-family: Orbitron;
         }
         
+        .infoButton {
+            transition: all .2s ease-in-out;
+        }
+        
+        .infoButton:hover {
+            transform: scale(1.5);
+            color: red !important;
+        }
+        
         .text {
             position: absolute;
             z-index: 500;
             top: 10%
         }
+        /* MOBILE RESPONSE */
         
+        @media screen and (max-width: 414px) {
+            .text {
+                text-align: center;
+            }
+            .moreInfo {
+                height: 25vh;
+            }
+            .infoButton {
+                color: white !important;
+                font-size: 15vh
+            }
+            .infoButton:hover {
+                touch-action: none;
+            }
+        }
+    </style>
+    <div class="text container-fluid">
+        <h1>FOR SALE</h1>
+        <h2>Online Real Estate</h2>
+        <h3>R199pm
+            <a class="infoButton fa fa-info-circle"></a>
+        </h3>
+    </div>
+    <!-- /MAIN PAGE INFO -->
+
+    <!-- PAGE MAIN GRAPHIC -->
+    <style>
         .bgGif {
             position: absolute;
             z-index: 300;
             width: 100%;
+            top: 50%;
+            overflow: hidden;
+            transform: translateY(-50%)
         }
         
         .bgGifImg {
             position: relative;
-            width: 60%;
+            width: 70%;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%);
+            transform: translateX(-50%);
         }
         
         .ia {
@@ -69,26 +114,92 @@
             z-index: 450;
             left: 50%;
             transform: translateX(-50%);
+            transition: all 5s ease-in-out;
+        }
+        
+        .iaimg:hover {
+            transform: scale(1.5)
+        }
+        /* MOBILE RESPONSE */
+        
+        @media screen and (max-width: 414px) {
+            .bgGif {
+                width: 100%;
+                overflow: hidden;
+            }
+            .bgGifImg {
+                width: 170%;
+            }
+            .ia {
+                overflow: hidden;
+            }
+            .iaimg {
+                width: 120%
+            }
         }
     </style>
-</head>
-
-<body>
-    <div class="text container-fluid">
-        <h1>FOR SALE</h1>
-        <h2>Online Real Estate</h2>
-        <h3>R199pm</h3>
-    </div>
-
     <div class="bgGif">
         <img class="bgGifImg" src="./awesome.gif" alt="awesomegif">
     </div>
     <div class="ia">
         <img class="iaimg" src="./ia.png" alt="awesomegif">
     </div>
+    <!-- /PAGE MAIN GRAPHIC -->
+
+    <!-- SERVICE LIST -->
+    <style>
+        .pushPlay {
+            position: relative;
+            display: none;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        
+        .fa-play {
+            color: white !important;
+            font-size: 50vh;
+            transition: all .2s ease-in-out;
+        }
+        
+        .fa-play:hover {
+            color: red !important;
+        }
+        
+        h4 {
+            color: white;
+            font-family: Stalinist One;
+        }
+        
+        @media screen and (max-width: 414px) {
+            .fa-play {
+                font-size: 30vh;
+            }
+        }
+    </style>
+    <div class="pushPlay text-center">
+        <a class="fa fa-play"></a>
+        <h4>PUSH PLAY</h4>
+    </div>
+
+    <!-- /SERVICE LIST -->
     <script>
-        console.log(screen);
-        $('body').css('height', screen.availHeight);
+        // ADJUST WHEN STARTING
+        $('body').css('height', window.innerHeight);
+        if (screen.width <= 414) {
+            $('body').append('<div class="fixed-bottom text-center moreInfo"></div>')
+            $('.infoButton').appendTo('.moreInfo');
+        }
+
+        // CLICK THE INFO ANCHOR BUTTON
+        $('.infoButton').on('click', () => {
+            $('body').children().fadeOut();
+            $('.pushPlay').fadeIn();
+        });
+
+        // PLAY LSIT OF SERVICES
+        $('.fa-play').on('click', () => {
+            $('.pushPlay').slideDown();
+        });
     </script>
 </body>
 
