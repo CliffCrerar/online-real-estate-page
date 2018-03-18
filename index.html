@@ -206,6 +206,7 @@
         .card-body {
             height: 75%;
             overflow: scroll;
+            -webkit-overflow-scrolling: touch;
         }
         
         .iaBottomLogo {
@@ -314,7 +315,7 @@
             </div>
             <div class="card-footer text-muted clearfix">
                 <button id="back" type="button" class="btn btn-warning">Back</button>
-                <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+                <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Contact us</button>
             </div>
         </div>
         <div class="iaBottomLogo">
@@ -380,10 +381,14 @@
     <!--/MODAL WINDOW-->
     <script>
         // ADJUST WHEN STARTING
-        $('body').css('height', window.innerHeight);
+
         if (screen.width <= 414) {
+            $('body').css('height', screen.availHeight + 20);
             $('body').append('<div class="fixed-bottom text-center moreInfo"></div>')
             $('.infoButton').appendTo('.moreInfo');
+
+        } else {
+            $('body').css('height', window.innerHeight);
         }
 
         // PLAY LSIT OF SERVICES
