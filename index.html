@@ -313,10 +313,12 @@
                 </ul>
             </div>
             <div class="card-footer text-muted clearfix">
+                <button id="back" type="button" class="btn btn-warning">Back</button>
                 <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
             </div>
         </div>
         <div class="iaBottomLogo">
+
             <img class="iaBottomImg" src="./iav.png">
         </div>
     </div>
@@ -407,6 +409,9 @@
                     $('.slistHeading').fadeIn(() => {
                         $('#service').fadeIn(() => {
                             $('.iaBottomLogo').fadeIn();
+                            $('#back').on('click', () => {
+                                location.reload();
+                            })
                         });
                     });
                 })
