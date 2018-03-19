@@ -86,7 +86,7 @@
             }
         }
     </style>
-    <div class="text container-fluid">
+    <div id="fs" class="text container-fluid">
         <h1>FOR SALE</h1>
         <h2>Online Real Estate</h2>
         <h3>R199pm
@@ -167,7 +167,7 @@
     </div>
     <!-- /PAGE MAIN GRAPHIC -->
 
-    <!-- PLAY SCREEN -->
+    <!-- PLAY SCREEN
     <style>
         .pushPlay {
             position: relative;
@@ -202,7 +202,7 @@
         <a class="fa fa-play playButton"></a>
         <h4>PUSH PLAY</h4>
     </div>
-    <!-- /PLAY SCREEN -->
+    /PLAY SCREEN -->
 
     <!-- SERVICE LIST -->
     <style>
@@ -289,7 +289,7 @@
 
                 <ul>
                     <li>Domain email service for 20 users, yourname@yourdomain.whateverisavailable</li>
-                    <li>Includes implementation of email applications for users</li>
+                    <li>Includes the implementation of free email applications for users</li>
                 </ul>
 
                 <h6>Offline profile</h6>
@@ -305,9 +305,9 @@
                 <ul>
                     <li>We will provide you with information on how your site is preforming</li>
                     <li>The type of info we can produce is almost limitless</li>
-                    <li>We can provide you will weekly reports customised for you</li>
+                    <li>We can provide you with weekly reports customised for you</li>
                     <li>Or you can have your own on demand access</li>
-                    <li>On demand access users have the option to create and customise their own analytics dashboard</li>
+                    <li>On demand access users have the option to create and customise your own analytics dashboard</li>
                 </ul>
 
                 <h6>Website maintenace</h6>
@@ -316,7 +316,7 @@
                     <li>Our fee includes 3 hours of on demand monthly content updates</li>
                 </ul>
 
-                <h6>Bakcups</h6>
+                <h6>Backups</h6>
 
                 <ul>
                     <li>We will make and manage backups of your website and email, safely and securerely in the cloud</li>
@@ -329,7 +329,7 @@
 
                 <h6>No hidden fees</h6>
                 <ul>
-                    <li>There are no other once off or hidden, fees</li>
+                    <li>There are no other once off or hidden fees</li>
                     <li>As soon as you have paid the first installment, we consider you are our client</li>
                     <li>Some T's and C's do apply and are set out in our service level agreement</li>
                 </ul>
@@ -414,27 +414,28 @@
 
         // CLICK THE INFO ANCHOR BUTTON
         $('.infoButton').on('click', () => {
-            $('body').children().fadeOut();
-            $('.pushPlay').fadeIn('400', () => {
-                pushPlay();
-            })
+            // $('body').children().fadeOut();
+            console.log('click');
+            $('#fs,.bgGif,.ia,.infoButton').fadeOut();
+            pushPlay();
+
         });
 
         const pushPlay = () => {
-            $('.playButton').on('click', () => {
-                //console.log('pressed play');
-                $('.serviceList').css('display', 'block')
-                $('.pushPlay').fadeOut(() => {
-                    $('.slistHeading').fadeIn(() => {
-                        $('#service').fadeIn(() => {
-                            $('.iaBottomLogo').fadeIn();
-                            $('#back').on('click', () => {
-                                location.reload();
-                            })
-                        });
-                    });
-                })
+
+            //console.log('pressed play');
+            $('.serviceList').css('display', 'block')
+
+            $('.slistHeading').fadeIn(() => {
+                $('#service').fadeIn(() => {
+                    $('.iaBottomLogo').fadeIn();
+                    $('#back').on('click', () => {
+                        location.reload();
+                    })
+                });
             });
+
+
         }
     </script>
 </body>
