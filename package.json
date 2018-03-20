@@ -1,26 +1,30 @@
 {
-  "name": "ia_offline2",
-  "version": "1.0.0",
-  "description": "\"Web real estate advertiser\"",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CliffCrerar/IA_Offline2.git"
-  },
-  "author": "Cliff Crera",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CliffCrerar/IA_Offline2/issues"
-  },
-  "homepage": "https://github.com/CliffCrerar/IA_Offline2#readme",
-  "dependencies": {
-    "bootstrap": "^4.0.0",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
-    "moment": "^2.21.0",
-    "popper.js": "^1.14.1"
-  }
+    "name": "ia_offline2",
+    "version": "1.0.0",
+    "description": "\"Web real estate advertiser\"",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CliffCrerar/IA_Offline2.git"
+    },
+    "author": "Cliff Crera",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CliffCrerar/IA_Offline2/issues"
+    },
+    "homepage": "https://github.com/CliffCrerar/IA_Offline2#readme",
+    "dependencies": {
+        "bootstrap": "^4.0.0",
+        "font-awesome": "^4.7.0",
+        "jquery": "^3.3.1",
+        "moment": "^2.21.0",
+        "node": "^9.8.0",
+        "popper.js": "^1.14.1"
+    },
+    "jshintConfig": {
+        "esversion": 6
+    }
 }

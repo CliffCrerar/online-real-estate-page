@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Infinity Arc</title>
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
-    <script src="./node_modules/jquery/dist/jquery.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/js/dist/popover.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./sendmail.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Audiowide|Iceberg|Orbitron|Russo+One|Sarpanch|Stalinist+One');
         body {
@@ -90,7 +92,7 @@
         <h1>FOR SALE</h1>
         <h2>Online Real Estate</h2>
         <h3>R199pm
-            <a class="infoButton fa fa-info-circle"></a>
+            <a class="infoButton fa fa-info-circle" type="button" data-container="body" data-toggle="popover" data-placement="right" data-content="Click here for more info"></a>
         </h3>
     </div>
     <!-- /MAIN PAGE INFO -->
@@ -368,7 +370,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><span class="fa fa-user"></span></div>
                                 </div>
-                                <input type="text" class="form-control" id="reqQteName" placeholder="Name">
+                                <input id="name" type="text" class="form-control" id="reqQteName" placeholder="Name">
                             </div>
                             <!--ADDRESS-->
                             <label class="sr-only" for="reqQteEmail">e-mail address</label>
@@ -376,7 +378,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><span class="fa fa-at"></span></div>
                                 </div>
-                                <input type="text" class="form-control" id="reqQteEmail" placeholder="email address">
+                                <input id="email" type="text" class="form-control" id="reqQteEmail" placeholder="email address">
                             </div>
 
                         </form>
@@ -388,18 +390,20 @@
                         <!--TEXT AREA FOR MESSAGE-->
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea id="message" class="form-control" id="message-text"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button id="sendmail" type="button" class="btn btn-primary">Send message</button>
                 </div>
             </div>
         </div>
     </div>
     <!--/MODAL WINDOW-->
+
+    <!--Scripts-->
     <script>
         // ADJUST WHEN STARTING
 
@@ -434,9 +438,11 @@
                     })
                 });
             });
-
-
         }
+
+        setTimeout(() => {
+            $('.infoButton').popover('show')
+        }, 5000);
     </script>
 </body>
 
