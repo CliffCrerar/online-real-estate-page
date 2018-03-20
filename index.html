@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Infinity Arc</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/bootstrap/js/dist/popover.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./sendmail.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Audiowide|Iceberg|Orbitron|Russo+One|Sarpanch|Stalinist+One');
@@ -224,6 +226,7 @@
             display: none;
             height: 70%;
             margin: auto;
+            z-index: 2000;
         }
         
         .card-body {
@@ -402,6 +405,32 @@
         </div>
     </div>
     <!--/MODAL WINDOW-->
+    <!--ALERTS-->
+    <style>
+        #warning {
+            display: none;
+            z-index: 5500 !important;
+        }
+        
+        #sent {
+            display: none;
+            z-index: 5600 !important;
+        }
+    </style>
+    <div id="sent" class="alert alert-dark alert-dismissible fade show fixed-bottom" role="alert">
+        <strong>GREAT!</strong> Your message was sent and we will contact you soon.
+        <button type="button" class="close dismiss">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="warning" class="alert alert-warning alert-dismissible fade show fixed-bottom" role="alert">
+        <strong>WARNING!</strong> Message not sent, please enter your name and a VALID email address.
+        <button type="button" class="close dismiss">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!--/ALERTS-->
 
     <!--Scripts-->
     <script>
@@ -420,9 +449,10 @@
         $('.infoButton').on('click', () => {
             // $('body').children().fadeOut();
             console.log('click');
+            $('.infoButton').popover('dispose');
             $('#fs,.bgGif,.ia,.infoButton').fadeOut();
+            $('#fs,.bgGif,.ia,.infoButton,.moreInfo').remove();
             pushPlay();
-
         });
 
         const pushPlay = () => {
@@ -440,9 +470,19 @@
             });
         }
 
-        setTimeout(() => {
-            $('.infoButton').popover('show')
-        }, 5000);
+        if (screen.width > 414) {
+            setTimeout(() => {
+                $('.infoButton').popover('show')
+                setTimeout(() => {
+                    $('.infoButton').popover('hide')
+                }, 5000);
+            }, 3000);
+        }
+
+        $('.dismiss').on('click', () => {
+            console.log('dismiss');
+            $('.alert').fadeOut();
+        })
     </script>
 </body>
 
