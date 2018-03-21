@@ -46,4 +46,4 @@ const sendToserver = function(data) {
             console.log(data, textStatus, error);
         }
     });
-}
+};
