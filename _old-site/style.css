@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Iceberg|Orbitron|Russo+One|Sarpanch|Stalinist+One');
+
+body {
+	background: black;
+	height: 100%;
+	width: 100%;
+}
+
+h1,
+h2,
+h3 {
+	color: white
+}
+
+h1 {
+	font-family: Stalinist One;
+}
+
+h2 {
+	font-family: Audiowide;
+}
+
+h3 {
+	font-family: Orbitron;
+}
+
+.infoButton {
+	transition: all .2s ease-in-out;
+}
+
+.infoButton:hover {
+	transform: scale(1.5);
+	color: red !important;
+}
+
+.text {
+	position: absolute;
+	z-index: 500;
+	top: 10%
+}
+
+/* MOBILE RESPONSE */
+
+@media screen and (max-width: 414px) {
+	.text {
+		text-align: center;
+	}
+
+	.moreInfo {
+		height: 25vh;
+	}
+
+	.infoButton {
+		color: white !important;
+		font-size: 15vh
+	}
+
+	.infoButton:hover {
+		touch-action: none;
+	}
+}
+
+@media screen and (max-width:320px) {
+	.text {
+		top: 0%;
+	}
+}
+
+@media screen and (max-width:375px) {
+	.text {
+		top: 5%;
+	}
+}
+
+
+.bgGif {
+	position: absolute;
+	z-index: 300;
+	width: 100%;
+	top: 50%;
+	overflow: hidden;
+	transform: translateY(-50%)
+}
+
+.bgGifImg {
+	position: relative;
+	width: 70%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.ia {
+	position: absolute;
+	z-index: 400;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.iaimg {
+	position: relative;
+	width: 50%;
+	z-index: 450;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 5s ease-in-out;
+}
+
+.iaimg:hover {
+	transform: scale(1.5)
+}
+
+/* MOBILE RESPONSE */
+
+@media screen and (max-width: 414px) {
+	.bgGif {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.bgGifImg {
+		width: 170%;
+	}
+
+	.ia {
+		overflow: hidden;
+	}
+
+	.iaimg {
+		width: 120%
+	}
+}
+
+@media screen and (max-width:320px) {
+	.bgGif {
+		top: 60%;
+	}
+
+	.ia {
+		top: 60%;
+	}
+}
+
+.serviceList {
+	position: absolute;
+	margin: 1vh 0 0 0;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%)
+}
+
+.slistHeading {
+	display: none;
+}
+
+.card {
+	display: none;
+	height: 70%;
+	margin: auto;
+	z-index: 2000;
+}
+
+.card-body {
+	height: 75%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.iaBottomLogo {
+	width: 100%;
+	height: 15%;
+	display: none;
+}
+
+.iaBottomImg {
+	position: relative;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.modal {
+	z-index: 5000;
+}
+
+#warning {
+	display: none;
+	z-index: 5500 !important;
+}
+
+#sent {
+	display: none;
+	z-index: 5600 !important;
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="./favicon.ico"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        >
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="ie=edge"
+        >
+        <title>Infinity Arc</title>
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        >
+        <link
+            rel="stylesheet"
+            href="fa/font-awesome.css"
+        >
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-116123890-1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-116123890-1');
+        </script>
+
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <!-- MAIN PAGE INFO -->
+        <style>
+
+        </style>
+        <div
+            id="fs"
+            class="text container-fluid"
+        >
+            <h1>IA is Turning</h1>
+            <h2>Into a foundation</h2>
+            <!-- <!-- <button class="btn">Join the dark side</button> --> -->
+        </div>
+        <!-- /MAIN PAGE INFO -->
+
+        <!-- PAGE MAIN GRAPHIC -->
+        <style>
+        </style>
+        <div class="bgGif">
+            <img
+                class="bgGifImg"
+                src="./awesome.gif"
+                alt="awesomegif"
+            >
+        </div>
+        <div class="ia">
+            <img
+                class="iaimg"
+                src="./ia.png"
+                alt="awesomegif"
+            >
+        </div>
+
+        <style>
+
+        </style>
+
+
+        <!--MODAL WINDOW-->
+        <div
+            class="modal fade bd-example-modal-lg"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="myLargeModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form>
+                            <form class="form-inline">
+                                <!--TO-->
+                                <label
+                                    class="sr-only"
+                                    for="mailto"
+                                >send to</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><span class="fa fa-paper-plane"></span></div>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="mailto"
+                                        disabled
+                                        value="info@infinityarc.net"
+                                    >
+                                </div>
+                                <!--NAME-->
+                                <label
+                                    class="sr-only"
+                                    for="reqQteName"
+                                >Name</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><span class="fa fa-user"></span></div>
+                                    </div>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        class="form-control"
+                                        id="reqQteName"
+                                        placeholder="Name"
+                                    >
+                                </div>
+                                <!--ADDRESS-->
+                                <label
+                                    class="sr-only"
+                                    for="reqQteEmail"
+                                >e-mail address</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><span class="fa fa-at"></span></div>
+                                    </div>
+                                    <input
+                                        id="email"
+                                        type="text"
+                                        class="form-control"
+                                        id="reqQteEmail"
+                                        placeholder="email address"
+                                    >
+                                </div>
+
+                            </form>
+                            <!--CARD INDICATES PART ENQUIRY-->
+                            <div class="card">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                            <!--TEXT AREA FOR MESSAGE-->
+                            <div class="form-group">
+                                <label
+                                    for="message-text"
+                                    class="col-form-label"
+                                >Message:</label>
+                                <textarea
+                                    id="message"
+                                    class="form-control"
+                                    id="message-text"
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                        >Close</button>
+                        <button
+                            id="sendmail"
+                            type="button"
+                            class="btn btn-primary"
+                        >Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/MODAL WINDOW-->
+        <!--ALERTS-->
+        <style>
+       
+        </style>
+        <div
+            id="sent"
+            class="alert alert-dark alert-dismissible fade show fixed-bottom"
+            role="alert"
+        >
+            <strong>GREAT!</strong> Your message was sent and we will contact you soon.
+            <button
+                type="button"
+                class="close dismiss"
+            >
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div
+            id="warning"
+            class="alert alert-warning alert-dismissible fade show fixed-bottom"
+            role="alert"
+        >
+            <strong>WARNING!</strong> Message not sent, please enter your name and a VALID email address.
+            <button
+                type="button"
+                class="close dismiss"
+            >
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!--/ALERTS-->
+
+        <!--Scripts-->
+        <script src="./jquery.min.js"></script>
+        <script src="./sendmail.js"></script>
+        <script>
+            // ADJUST WHEN STARTING
+
+            if (screen.width <= 414) {
+                $('body').css('height', screen.availHeight + 20);
+                $('body').append('<div class="fixed-bottom text-center moreInfo"></div>')
+                $('.infoButton').appendTo('.moreInfo');
+
+            } else {
+                $('body').css('height', window.innerHeight);
+            }
+
+            // CLICK THE INFO ANCHOR BUTTON
+            $('.infoButton').on('click', () => {
+                // $('body').children().fadeOut();
+                console.log('click');
+                $('.infoButton').popover('dispose');
+                $('#fs,.bgGif,.ia,.infoButton').fadeOut();
+                $('#fs,.bgGif,.ia,.infoButton,.moreInfo').remove();
+                pushPlay();
+            });
+
+            const pushPlay = () => {
+
+                //console.log('pressed play');
+                $('.serviceList').css('display', 'block')
+
+                $('.slistHeading').fadeIn(() => {
+                    $('#service').fadeIn(() => {
+                        $('.iaBottomLogo').fadeIn();
+                        $('#back').on('click', () => {
+                            location.reload();
+                        })
+                    });
+                });
+            }
+
+            if (screen.width > 414) {
+                setTimeout(() => {
+                    $('.infoButton').popover('show')
+                    setTimeout(() => {
+                        $('.infoButton').popover('hide')
+                    }, 5000);
+                }, 3000);
+            }
+
+            $('.dismiss').on('click', () => {
+                console.log('dismiss');
+                $('.alert').fadeOut();
+            })
+        </script>
+    </body>
+
+</html>
